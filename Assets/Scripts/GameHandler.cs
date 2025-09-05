@@ -15,6 +15,7 @@ public class GameHandler : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        InitializeStatic();
     }
 
     private void Start()
@@ -25,6 +26,13 @@ public class GameHandler : MonoBehaviour
 
         snake.Setup(levelGrid);
         levelGrid.Setup(snake);
+
+        
+    }
+
+    private static void InitializeStatic()
+    {
+        score = 0;
     }
 
     public static int GetScore()
