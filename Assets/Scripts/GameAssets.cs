@@ -11,5 +11,6 @@ public class GameAssets : MonoBehaviour
         instance = this;
     }
     public Sprite snakeHeadSprite;
+    public Sprite snakeBodySprite;
     public Sprite foodSprite;
 }
