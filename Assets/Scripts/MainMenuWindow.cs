@@ -21,6 +21,7 @@ public class MainMenuWindow : MonoBehaviour
             Loader.Load(Loader.Scene.GameScene);
             if (Time.timeScale != 1f) { Time.timeScale = 1f; }
         });
+        transform.Find("mainSub").Find("playBtn").GetComponent<Button>().AddButtonSounds();
 
 
         Button quitBtn = transform.Find("mainSub").Find("quitBtn").GetComponent<Button>();
@@ -28,18 +29,22 @@ public class MainMenuWindow : MonoBehaviour
         {
             Application.Quit();
         });
+        transform.Find("mainSub").Find("quitBtn").GetComponent<Button>().AddButtonSounds();
 
         Button howToPlayBtn = transform.Find("mainSub").Find("howToPlayBtn").GetComponent<Button>();
         howToPlayBtn.onClick.AddListener(() =>
         {
             ShowSub(Sub.HowToPlay);
         });
+        transform.Find("mainSub").Find("howToPlayBtn").GetComponent<Button>().AddButtonSounds();
+
 
         Button backBtn = transform.Find("howToPlaySub").Find("backBtn").GetComponent<Button>();
         backBtn.onClick.AddListener(() =>
         {
             ShowSub(Sub.Main);
         });
+        transform.Find("howToPlaySub").Find("backBtn").GetComponent<Button>().AddButtonSounds();
 
         ShowSub(Sub.Main);
     }

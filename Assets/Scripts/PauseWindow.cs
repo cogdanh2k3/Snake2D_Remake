@@ -16,12 +16,15 @@ public class PauseWindow : MonoBehaviour
         {
             GameHandler.ResumeGame();
         });
+        transform.Find("resumeBtn").GetComponent<Button>().AddButtonSounds();
 
         Button mainMenuBtn = transform.Find("mainMenuBtn").GetComponent<Button>();
         mainMenuBtn.onClick.AddListener(() =>
         {
             Loader.Load(Loader.Scene.MainMenu);
         });
+        transform.Find("mainMenuBtn").GetComponent<Button>().AddButtonSounds();
+
 
         Hide();
     }
